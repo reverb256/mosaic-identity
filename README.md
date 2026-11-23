@@ -19,7 +19,6 @@ Self-sovereign identity for everyone. Ed25519 keys, WebAuthn passkeys, QR contac
 | **Linux / macOS** | `git clone && npm install && node server.js` |
 | **Docker** | `docker compose -f oci/docker-compose.yml up -d` |
 | **Termux (Android)** | `npm start` (sql.js fallback auto-activates) |
-| **NixOS** | `nix build .#mosiac-identity` (see `nix/default.nix`) |
 | **Railway / Fly.io** | `docker build -f oci/Dockerfile .` |
 | **Homebrew / apt** | `npm install && node server.js` |
 
@@ -37,7 +36,6 @@ mosiac-identity/
 │   └── sqlite-adapter.js ← auto-selects native or WASM SQLite
 ├── public/             ← identity management SPA
 ├── oci/                ← Docker multi-arch build
-├── nix/                ← Nix derivation
 └── docs/
     └── termux.md       ← Android setup guide
 ```
