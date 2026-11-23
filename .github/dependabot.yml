@@ -1,5 +1,8 @@
 version: 2
 updates:
+  # github-actions ecosystem removed 2026-11-23: this repo has no
+  # .github/workflows/ or action.yml, so Dependabot failed weekly with
+  # dependency_file_not_found. Re-add only if workflows are introduced.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -8,13 +11,4 @@ updates:
     labels: ["dependencies", "automated"]
     groups:
       npm:
-        patterns: ["*"]
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    labels: ["dependencies", "ci"]
-    groups:
-      actions:
         patterns: ["*"]
