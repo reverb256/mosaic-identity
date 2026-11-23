@@ -3,7 +3,7 @@
 /**
  * Identity Module — Ed25519 key management with NaCl.
  *
- * Every Mosiac user gets an Ed25519 key pair as their root identity.
+ * Every Mosaic user gets an Ed25519 key pair as their root identity.
  * The public key is the user's globally unique address/identity.
  * The private key never leaves the device (stored in SQLite via better-sqlite3).
  *

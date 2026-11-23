@@ -1,5 +1,5 @@
 /**
- * Mosiac Identity Layer — Frontend Module
+ * Mosaic Identity Layer — Frontend Module
  *
  * Handles:
  *   - WebAuthn registration ceremony (passkey creation)
@@ -12,7 +12,7 @@
 
 // ─── Base URL ──────────────────────────────────────────────────────────────
 
-const API = '/mosiac';
+const API = '/mosaic';
 
 // ─── DOM refs ──────────────────────────────────────────────────────────────
 
@@ -473,9 +473,9 @@ async function init() {
 
   // Language switcher
   const langSelect = document.getElementById('lang-select');
-  if (langSelect && window.MosiacI18n) {
-    langSelect.value = window.MosiacI18n.locale;
-    langSelect.addEventListener('change', (e) => window.MosiacI18n.setLocale(e.target.value));
+  if (langSelect && window.MosaicI18n) {
+    langSelect.value = window.MosaicI18n.locale;
+    langSelect.addEventListener('change', (e) => window.MosaicI18n.setLocale(e.target.value));
   }
 }
 

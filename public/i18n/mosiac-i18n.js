@@ -1,9 +1,9 @@
-// ── Mosiac Identity i18n Engine ────────────────────────────────────────────
+// ── Mosaic Identity i18n Engine ────────────────────────────────────────────
 // Lightweight, dependency-free translation system for vanilla JS.
 // Loads /i18n/{locale}.json and applies data-i18n* attributes.
 // ──────────────────────────────────────────────────────────────────────────
 
-const MosiacI18n = (() => {
+const MosaicI18n = (() => {
   let _translations = {};
   let _locale = 'en';
   let _ready = null;
@@ -37,9 +37,9 @@ const MosiacI18n = (() => {
       // Persist via cookie (30 days)
       document.cookie = `identity_lang=${locale}; path=/; max-age=2592000; SameSite=Lax`;
     } catch (err) {
-      console.warn('[MosiacI18n] Failed to load locale "' + locale + '":', err.message);
+      console.warn('[MosaicI18n] Failed to load locale "' + locale + '":', err.message);
       if (locale !== DEFAULT) {
-        console.info('[MosiacI18n] Falling back to "' + DEFAULT + '"');
+        console.info('[MosaicI18n] Falling back to "' + DEFAULT + '"');
         await load(DEFAULT);
       }
     }
@@ -118,6 +118,6 @@ const MosiacI18n = (() => {
   };
 })();
 
-window.MosiacI18n = MosiacI18n;
-window.t = (key, params) => MosiacI18n.t(key, params);
-MosiacI18n.init();
+window.MosaicI18n = MosaicI18n;
+window.t = (key, params) => MosaicI18n.t(key, params);
+MosaicI18n.init();

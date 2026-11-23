@@ -16,7 +16,7 @@ const {
 const crypto = require('crypto');
 const { getIdentityDb } = require('./sqlite-adapter');
 
-const RP_NAME = 'Mosiac';
+const RP_NAME = 'Mosaic';
 const RP_ID = process.env.MOSIAC_RP_ID || 'localhost';
 const ORIGIN = (process.env.MOSIAC_ORIGIN || 'http://localhost:3000').replace(/\/+$/, '');
 
@@ -44,7 +44,7 @@ function beginRegistration({ label } = {}) {
     rpName: RP_NAME,
     rpID: RP_ID,
     userName: pubkey.slice(0, 16) + '\u2026',
-    userDisplayName: label || `Mosiac ${pubkey.slice(0, 8)}`,
+    userDisplayName: label || `Mosaic ${pubkey.slice(0, 8)}`,
     challenge,
     userID: userId,
     attestationType: 'none',

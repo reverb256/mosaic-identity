@@ -1,4 +1,4 @@
-# Mosiac Identity Service
+# Mosaic Identity Service
 
 Self-sovereign identity for everyone. Ed25519 keys, WebAuthn passkeys, QR contact exchange.
 
@@ -25,7 +25,7 @@ Self-sovereign identity for everyone. Ed25519 keys, WebAuthn passkeys, QR contac
 ## Architecture
 
 ```
-mosiac-identity/
+mosaic-identity/
 ├── server.js           ← entry point (same file, every platform)
 ├── start.sh            ← friendly wrapper
 ├── src/
@@ -42,20 +42,20 @@ mosiac-identity/
 
 ## API
 
-All endpoints live under `/mosiac/*`:
+All endpoints live under `/mosaic/*` (the old `/mosaic/*` paths remain as a backwards-compatible alias):
 
 | Method | Path | Purpose |
 |--------|------|---------|
-| GET | `/mosiac/identity` | List identities |
-| POST | `/mosiac/identity/generate` | New Ed25519 keypair |
-| POST | `/mosiac/auth/register/begin` | Start passkey registration |
-| POST | `/mosiac/auth/register/complete` | Complete passkey registration |
-| POST | `/mosiac/auth/login/begin` | Start passkey login |
-| POST | `/mosiac/auth/login/complete` | Complete passkey login |
-| GET | `/mosiac/qr/:pubkey` | QR code SVG |
-| POST | `/mosiac/qr/scan` | Process scanned QR |
-| POST | `/mosiac/sign` | Sign JSON |
-| POST | `/mosiac/verify` | Verify envelope |
+| GET | `/mosaic/identity` | List identities |
+| POST | `/mosaic/identity/generate` | New Ed25519 keypair |
+| POST | `/mosaic/auth/register/begin` | Start passkey registration |
+| POST | `/mosaic/auth/register/complete` | Complete passkey registration |
+| POST | `/mosaic/auth/login/begin` | Start passkey login |
+| POST | `/mosaic/auth/login/complete` | Complete passkey login |
+| GET | `/mosaic/qr/:pubkey` | QR code SVG |
+| POST | `/mosaic/qr/scan` | Process scanned QR |
+| POST | `/mosaic/sign` | Sign JSON |
+| POST | `/mosaic/verify` | Verify envelope |
 
 ## SQLite Backend
 

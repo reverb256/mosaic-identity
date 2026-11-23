@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Mosiac SQLite Adapter — universal SQLite for every platform.
+ * Mosaic SQLite Adapter — universal SQLite for every platform.
  *
  * Strategy:
  *   1. Try `better-sqlite3` (native, fast, requires C++ build tools)

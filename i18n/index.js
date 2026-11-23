@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Mosiac Identity i18n — lightweight bilingual helper.
+ * Mosaic Identity i18n — lightweight bilingual helper.
  * Loads EN/FR string maps and resolves by Accept-Language header.
  */
 const fs = require('fs');

@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * Mosiac Identity Service — standalone sidecar.
+ * Mosaic Identity Service — standalone sidecar.
  * Runs alongside Haven (or any chat server), providing:
  *   - Ed25519 key management
  *   - WebAuthn (Passkey) registration/login
@@ -26,7 +26,7 @@ const HOST = process.env.MOSIAC_HOST || '0.0.0.0';
 
 // ─── Init ────────────────────────────────────────────────────────────────
 initDatabase();
-console.log(`  Mosiac identity DB initialized`);
+console.log(`  Mosaic identity DB initialized`);
 
 // ─── App ─────────────────────────────────────────────────────────────────
 const app = express();
@@ -48,18 +48,20 @@ app.use((req, res, next) => {
 });
 
 // ─── Routes ──────────────────────────────────────────────────────────────
-// Identity/QR/contacts/signing at /mosiac/*
+// Identity/QR/contacts/signing at /mosaic/* (canonical).
+// /mosiac/* is kept as a backwards-compatible alias for existing clients.
+app.use('/mosaic', identityRoutes);
 app.use('/mosiac', identityRoutes);
 
 // Health at root
-app.get('/health', (req, res) => res.json({ ok: true, service: 'mosiac-identity' }));
+app.get('/health', (req, res) => res.json({ ok: true, service: 'mosaic-identity' }));
 
 // ─── Static files (identity SPA) ─────────────────────────────────────────
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ─── Start ───────────────────────────────────────────────────────────────
 app.listen(PORT, HOST, () => {
-  console.log(`  Mosiac identity service running on http://${HOST}:${PORT}`);
-  console.log(`  API:     http://${HOST}:${PORT}/mosiac/`);
+  console.log(`  Mosaic identity service running on http://${HOST}:${PORT}`);
+  console.log(`  API:     http://${HOST}:${PORT}/mosaic/`);
   console.log(`  SPA:     http://${HOST}:${PORT}/identity.html`);
 });
