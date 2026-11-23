@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Mosiac Identity Routes — mounted alongside Haven's existing routes.
+ * Mosaic Identity Routes — mounted alongside Haven's existing routes.
  * All identity/auth/QR/contact/signing endpoints in one place.
  */
 const express = require('express');
@@ -15,7 +15,7 @@ const { getIdentityDb } = require('./sqlite-adapter');
 const { t, bilingualError } = require('../i18n');
 
 /* ─── Health ─── */
-router.get('/health', (req, res) => res.json({ ok: true, mosiac: '0.1.0' }));
+router.get('/health', (req, res) => res.json({ ok: true, mosaic: '0.1.0', mosiac: '0.1.0' }));
 
 /* ─── Identity ─── */
 router.get('/identity', (req, res) => {

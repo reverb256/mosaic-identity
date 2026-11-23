@@ -1,6 +1,6 @@
-# Mosiac Identity on Termux
+# Mosaic Identity on Termux
 
-Run Mosiac on any Android device via Termux — no root, no Docker, no compilation.
+Run Mosaic on any Android device via Termux — no root, no Docker, no compilation.
 
 ## Quick Start
 
@@ -12,7 +12,7 @@ Run Mosiac on any Android device via Termux — no root, no Docker, no compilati
 pkg update && pkg upgrade -y
 pkg install nodejs git -y
 
-# 3. Download Mosiac
+# 3. Download Mosaic
 git clone https://github.com/reverb256/Mosaic
 cd Mosaic
 
@@ -44,7 +44,7 @@ Or use Termux:Boot to start on device boot:
 mkdir -p ~/.termux/boot
 cat > ~/.termux/boot/mosiac.sh << 'EOF'
 #!/data/data/com.termux/files/usr/bin/sh
-cd ~/Mosiac && npm start
+cd ~/Mosaic && npm start
 EOF
 chmod +x ~/.termux/boot/mosiac.sh
 ```
@@ -63,7 +63,7 @@ Open `http://<phone-ip>:3002/identity.html` on any device on the same network.
 
 ## Running Alongside Other Services
 
-Mosiac runs on port 3002 by default. Change with:
+Mosaic runs on port 3002 by default. Change with:
 
 ```bash
 MOSIAC_PORT=8080 npm start
@@ -71,7 +71,7 @@ MOSIAC_PORT=8080 npm start
 
 ## Why Termux?
 
-Termux turns any Android device into a Linux server. Combining it with Mosiac means:
+Termux turns any Android device into a Linux server. Combining it with Mosaic means:
 - Your identity lives on your phone, not in a cloud
 - QR codes for key exchange work natively with the phone camera
 - Passkeys use the device biometrics
